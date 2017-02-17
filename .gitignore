@@ -1,0 +1,13 @@
+# Ignore checkpoints
+.pynb_checkpoints/
+
+# Ignore mac stuff
+.DS_Store
+
+# Ignore pickle files
+*.pickle
+
+# Ignore some notebook
+Tests.ipynb
+Gnarl\ Clean\ -\ Deep\ Learning.ipynb
+Gnarl\ -\ Deep\ Learning.ipynb
