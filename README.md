@@ -9,7 +9,7 @@ Gnarl is designed to be as easy as possible to get started with. The following i
 
 ```python
 # Import Gnarl model
-from Gnarl import Gnarl
+from gnarl import Gnarl
 ```
 
 ### Instantiate a Gnarl model
