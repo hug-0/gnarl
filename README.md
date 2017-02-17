@@ -63,13 +63,13 @@ gnarl = Gnarl(X_train, y_train, **nn_options)
 
 ```python
 # Add first hidden layer
-gnarl.hidden_layer(10, activation='leaky_relu')
+gnarl.add_layer(10, activation='leaky_relu')
 
 # Add second hidden layer
-gnarl.hidden_layer(5, activation='leaky_relu')
+gnarl.add_layer(5, activation='leaky_relu')
 
 # Add output layer
-gnarl.hidden_layer(1, activation='none')
+gnarl.add_layer(1, activation='none')
 ```
 
 ### Connect the layers
@@ -100,7 +100,7 @@ Once the nodes in the graph have been connected, the gnarl model will have the f
  'connect_layers',
  'fit',
  'graph',
- 'hidden_layer',
+ 'add_layer',
  'layers_list',
  'learning_rate',
  'loss',
@@ -228,10 +228,10 @@ gnarl_iris = Gnarl(X_train_iris, y_train_iris,
                    verbose=True)
 
 # Add a hidden layer
-gnarl_iris.hidden_layer(8, activation='leaky_relu')
+gnarl_iris.add_layer(8, activation='leaky_relu')
 
 # Add output layer - 3 output classes
-gnarl_iris.hidden_layer(3, activation='none')
+gnarl_iris.add_layer(3, activation='none')
 
 # Connect layers
 gnarl_iris.connect_layers()

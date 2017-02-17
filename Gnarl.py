@@ -4,19 +4,19 @@ import sys, os, pickle
 from sklearn.utils import shuffle, resample
 
 # Import nodes
-from Node import Node
-from Input import Input
-from Linear import Linear
+from base_node import Node
+from input_node import Input
+from linear_node import Linear
 
 # Import loss nodes
-from Mse import MSE
-from CrossEntropy import CrossEntropy
+from mse_node import MSE
+from cross_entropy_node import CrossEntropy
 
 # Import activation nodes
-from Sigmoid import Sigmoid
-from Softmax import Softmax
-from LeakyRelu import LeakyReLU
-from Relu import ReLU
+from sigmoid_node import Sigmoid
+from softmax_node import Softmax
+from leaky_relu_node import LeakyReLU
+from relu_node import ReLU
 
 # Activation functions
 ACTIVATIONS = {
@@ -103,7 +103,7 @@ class Gnarl(object):
     def _input_layer(self, X_train):
         """Define the model's input layer."""
         self.layers_list.append(self.X)
-        self._weights.append(self.nodes[self.X]) # Convenience for hidden_layer
+        self._weights.append(self.nodes[self.X]) # Convenience for add_layer
 
     def _reset_graph(self):
         """Reset graph node values."""
@@ -129,7 +129,7 @@ class Gnarl(object):
 
         return norm_probs
 
-    def hidden_layer(self, out_nodes,
+    def add_layer(self, out_nodes,
                      activation):
         """Add a hidden layer to the model."""
         # Init random weights

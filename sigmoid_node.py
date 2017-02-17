@@ -1,4 +1,4 @@
-from Node import Node
+from base_node import Node
 import numpy as np
 
 class Sigmoid(Node):
